@@ -1,0 +1,18 @@
+$fontSize: 16;
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+@function toREM($args) {
+  @return $args / $fontSize+rem;
+}

@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "standard"
+  ],
+  "rules": {
+    "semi": [
+      2,
+      "always"
+    ],
+    "comma-dangle": [
+      2,
+      "never"
+    ]
+  },
+  "parser": "babel-eslint"
+}
