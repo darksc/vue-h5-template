@@ -1,16 +1,22 @@
 <template>
   <div class="main-wrap">
-    <Hello></Hello>
+    <Head></Head>
+    <ul>
+      <li v-for="item in 100">中间内容</li>
+    </ul>
+    <Foot></Foot>
   </div>
 </template>
 <script>
 
-  import Hello from './components/Hello';
+  import Head from './components/Head';
+  import Foot from './components/Foot';
   import mixins from './mixins';
 
   import { getQueryParameters } from './libs/utils';
 
   const queryObj = getQueryParameters();
+
   export default {
     mixins: [mixins],
     data () {
@@ -21,13 +27,13 @@
     },
     methods: {},
     components: {
-      Hello
+      Head,
+      Foot
     }
   };
 </script>
 <style lang="scss">
   @import "./index";
-
   body, html {
     width: 100%;
     height: 100%;
@@ -44,6 +50,13 @@
     list-style: none;
   }
 
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
   h1, h2, h3, h4, h5, h6 {
     padding: 0;
     margin: 0;
@@ -58,7 +71,9 @@
   }
 
   .main-wrap {
-    font-size: toREM(10);
+    font-size: rem(16);
+    height: 100%;
+    overflow: auto;
   }
 
 </style>

@@ -13,6 +13,6 @@ $fontSize: 16;
   height: 0;
 }
 
-@function toREM($args) {
+@function rem($args) {
   @return $args / $fontSize+rem;
 }
